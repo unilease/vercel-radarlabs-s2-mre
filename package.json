@@ -1,0 +1,10 @@
+{
+  "name": "vercel-radarlabs-s2-mre",
+  "version": "0.0.0",
+  "scripts": {
+    "vercel-build": "echo '>>> Find s2.node file <<<'; find . -name 's2.node'"
+  },
+  "dependencies": {
+    "@radarlabs/s2": "^0.0.5"
+  }
+}
