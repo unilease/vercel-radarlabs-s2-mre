@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/radius.mjs": {
+      "includeFiles": "node_modules/@radarlabs/s2/**"
+    }
+  }
+}

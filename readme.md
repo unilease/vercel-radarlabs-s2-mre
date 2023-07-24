@@ -1,5 +1,24 @@
 # Vercel @radarlabs/s2 MRE
 
+## Fixed!
+
+1. Use `includeFiles` inside a `vercel.json` file to force include library:
+   ```
+   {
+      "functions": {
+         "api/radius.mjs": {
+            "includeFiles": "node_modules/@radarlabs/s2/**"
+         }
+      }
+   }
+   ```
+1. Copy over the binary generated in issue https://github.com/radarlabs/s2/issues/68 using `vercel-build` to avoid GLIBC_2.29 not found:
+   ```
+   cp ./s2.node ./node_modules/@radarlabs/s2/lib/binding/Release/node-v108-linux-x64/s2.node
+   ```
+
+## Original Issue
+
 [`@radarlabs/s2`](https://github.com/radarlabs/s2) supports Node.js 16, 18 and 20, however, running it in a Vercel serverless function on Node 18 returns an error.
 
 ## Steps to reproduce:
